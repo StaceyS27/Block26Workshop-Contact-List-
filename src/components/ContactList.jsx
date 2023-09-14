@@ -29,9 +29,10 @@ const [contacts, setContacts] = useState(dummyContacts);
                     <td> Phone </td>
                 </tr>
 
-                {
-
-                }
+                {contacts.map(function(contact) {
+                        return <ContactRow key= {contact.id} contact= {contact} 
+                        /> 
+                    })}
             </tbody>
         </table>
     )

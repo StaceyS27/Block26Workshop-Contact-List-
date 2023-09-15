@@ -11,7 +11,7 @@ const dummyContacts = [
 
 
 
-export default function ContactList() {
+export default function ContactList( {setSelectedContactId, selectedContactId}) {
 const [contacts, setContacts] = useState(dummyContacts);
   console.log("Contacts: ", contacts);
 
@@ -49,8 +49,11 @@ const [contacts, setContacts] = useState(dummyContacts);
                 </tr>
 
                 {contacts.map(function(contact) {
-                        return <ContactRow key= {contact.id} contact= {contact} 
-                        /> 
+                        return <ContactRow 
+                        setSelectedContactId = {setSelectedContactId} 
+                        selectedContactId = {selectedContactId}
+                        key= {contact.id} contact= {contact} 
+                        /> ;
                     })}
             </tbody>
         </table>
